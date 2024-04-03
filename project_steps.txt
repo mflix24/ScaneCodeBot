@@ -1,0 +1,13 @@
+Steps neede to be followed :
+____________________________
+- Step-00 : importing the libraries and packages
+- Step-01 : cloning the repository
+- Step-02 : Load the repository
+- Step-03 : splitting the documents into chunkings
+- Step-04 : Setting the API KEY for embedding
+- Step-05 : loading the embbing model
+- Step-06 : loading the model that are going to use here as openai
+- Step-07 : Setting Buffer Memory
+- Step-08 : Chaining all the things together
+- Step-09 : prompt designing
+- Step-10 : Final Result
