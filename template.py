@@ -14,7 +14,10 @@ list_of_files = [
     "setup.py",
     "app.py",
     "research/dev.ipynb",
-    "store_index.py"
+    "store_index.py",
+    "static/jquery.min.js",
+    "static/style.css",
+    "templates/index.html"
 ]
 
 

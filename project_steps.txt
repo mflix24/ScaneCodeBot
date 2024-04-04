@@ -6,7 +6,7 @@ ____________________________
 - Step-03 : splitting the documents into chunkings
 - Step-04 : Setting the API KEY for embedding
 - Step-05 : loading the embbing model
-- Step-06 : loading the model that are going to use here as openai
+- Step-06 : creating the vector store database-chromadb
 - Step-07 : Setting Buffer Memory
 - Step-08 : Chaining all the things together
 - Step-09 : prompt designing
