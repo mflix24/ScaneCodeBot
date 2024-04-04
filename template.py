@@ -13,11 +13,7 @@ list_of_files = [
     "requirements.txt",
     "setup.py",
     "app.py",
-    "research/dev.ipynb",
-    "store_index.py",
-    "static/jquery.min.js",
-    "static/style.css",
-    "templates/index.html"
+    "research/trials.ipynb"
 ]
 
 
@@ -29,13 +25,13 @@ for filepath in list_of_files:
 
     if filedir !="":
         os.makedirs(filedir, exist_ok=True)
-        logging.info(f"Creating the directory; {filedir} for the file: {filename}")
+        logging.info(f"Creating directory; {filedir} for the file: {filename}")
 
     if (not os.path.exists(filepath)) or (os.path.getsize(filepath) == 0):
         with open(filepath, "w") as f:
             pass
-            logging.info(f"Creating the empty file: {filepath}")
+            logging.info(f"Creating empty file: {filepath}")
 
 
     else:
-        logging.info(f"{filename} is already exist")
+        logging.info(f"{filename} is already exists")
