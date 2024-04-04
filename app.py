@@ -8,7 +8,7 @@ from langchain.chat_models import ChatOpenAI
 from langchain.memory import ConversationSummaryMemory
 from langchain.chains import ConversationalRetrievalChain
 
-
+# initialize the flask application
 app = Flask(__name__)
 
 
@@ -16,25 +16,29 @@ app = Flask(__name__)
 load_dotenv()
 OPENAI_API_KEY = os.environ.get('OPENAI_API_KEY')
 os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
-
-
+ 
+# Step-02 : calling load_embedding() function
 embeddings = load_embedding()
+
+# assigning varibale
 persist_directory = "db"
 
-
-# Now we can load the persisted database from disk, and use it as normal.
+# Step-03 : storing data into vector store here using chromadb
 vectordb = Chroma(
     persist_directory=persist_directory,
     embedding_function=embeddings
     )
 
 
-
-# model loading
+# Step-04 : model loading through ChatOpenAI() class
 llm = ChatOpenAI()
-# conversation buffer memory
+
+
+# Step-05 : conversation buffer memory
 memory = ConversationSummaryMemory(llm=llm, memory_key = "chat_history", return_messages=True)
-# loading ConversationalRetrievalChain clas
+
+
+# Step-06 : loading ConversationalRetrievalChain clas
 qa = ConversationalRetrievalChain.from_llm(llm, retriever=vectordb.as_retriever(search_type="mmr", search_kwargs={"k":8}), memory=memory)
 
 
